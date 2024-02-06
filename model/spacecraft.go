@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
 	"github.com/suyono3484/r3d3"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type Model struct {
