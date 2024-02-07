@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS armament_detail;
+DROP TABLE IF EXISTS armament;
+DROP TABLE IF EXISTS spacecraft;

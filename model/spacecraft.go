@@ -16,6 +16,7 @@ const (
 	listQuery     = "SELECT id, name, status FROM spacecraft"
 	getQuery      = "SELECT id, name, class crew, image, value, status FROM spacecraft WHERE id = $1"
 	armamentQuery = "SELECT a.name, d.qty FROM armament_detail d JOIN armament a ON a.id = d.armament_id JOIN spacecraft s ON s.id = d.spacecraft_id WHERE s.id = $1"
+	deleteQuery   = "UPDATE spacecraft SET status = $2 WHERE id = $1"
 	name          = "name"
 	class         = "class"
 	status        = "status "
@@ -55,7 +56,7 @@ func NewModel(dsn string) (*Model, error) {
 	return m, nil
 }
 
-func (m *Model) Get(id int64) (r3d3.SpaceCraft, error) {
+func (m *Model) GetByID(id int64) (r3d3.SpaceCraft, error) {
 	var (
 		r    *sqlx.Row
 		err  error
@@ -170,6 +171,21 @@ func (m *Model) List(filter ...r3d3.ListFilter) ([]r3d3.SpaceCraftInList, error)
 	}
 
 	return result, nil
+}
+
+func (m *Model) Create(spacecraft r3d3.SpaceCraftCreate) error {
+	//TODO: this is a placeholder, update me!
+	return nil
+}
+
+func (m *Model) Update(id int64, spacecraft r3d3.SpaceCraftCreate, fields []string) error {
+	//TODO: this is a placeholder, update me!
+	return nil
+}
+
+func (m *Model) Delete(id int64) error {
+	//TODO: this is a placeholder, update me!
+	return nil
 }
 
 func (l *listRow) ID() int64 {
